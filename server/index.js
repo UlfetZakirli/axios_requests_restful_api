@@ -1,3 +1,5 @@
+import *as dotenv from "dotenv"
+dotenv.config()
 import express from "express"
 import cors from "cors"
 import "colors"
@@ -50,5 +52,5 @@ app.delete('/users/:id', (req, res) => {
     return res.send(users)
 })
 
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 app.listen(PORT, () => console.log(`Server running port:http://localhost:${PORT}`.green.bold))
